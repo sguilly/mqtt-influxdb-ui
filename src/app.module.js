@@ -6,7 +6,7 @@
         'app.core',
 
         // Features (listed alphabetically)
-        'app.accounts',
+        'app.etl',
         'app.appbar',
         'app.approot',
         'app.dashboard',

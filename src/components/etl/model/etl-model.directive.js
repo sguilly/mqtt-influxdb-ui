@@ -2,8 +2,9 @@
 
     'use strict';
 
-    angular.module('app.dashboard')
-        .directive('tmplDashboard', directiveFunction);
+    angular.module('app.etl')
+        .directive('tmplEtlModel', directiveFunction);
+
 
     // ----- directiveFunction -----
     directiveFunction.$inject = [];
@@ -13,14 +14,17 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'components/dashboard/dashboard.html',
+            templateUrl: 'components/etl/model/etl-model.html',
             scope: {
             },
-            controller: 'DashboardController',
+            controller: 'EtlModelController',
             controllerAs: 'vm'
         };
 
         return directive;
     }
+
+
+
 
 })();

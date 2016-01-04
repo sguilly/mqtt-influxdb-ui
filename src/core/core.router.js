@@ -10,7 +10,7 @@
     /* @ngInject */
     function configFunction($locationProvider, $stateProvider, $urlRouterProvider) {
 
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
 
         $urlRouterProvider.otherwise('/');
 
@@ -20,9 +20,14 @@
                 template: '<tmpl-dashboard class="page"></tmpl-dashboard>'
             })
 
-            .state('accounts', {
-                url: '/accounts',
-                template: '<tmpl-accounts class="page"></tmpl-accounts>'
-            });
+            .state('etl', {
+                url: '/etl',
+                template: '<tmpl-etl class="page"></tmpl-etl>'
+            })
+
+    .state('etl-model', {
+            url: '/etl-model/:objectId',
+            template: '<tmpl-etl-model class="page"></tmpl-etl-model>'
+        });
     }
 })();

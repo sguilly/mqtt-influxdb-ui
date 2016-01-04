@@ -1,0 +1,85 @@
+<h1>{{vm.etl._id}}</h1>
+
+<md-button class="md-raised" ng-click="vm.save()"> Sauvegarder </md-button>
+
+<md-button class="md-raised" ng-click="vm.remove()"> Effacer </md-button>
+
+<md-content layout-padding="">
+    <div>
+        <form name="userForm">
+
+            <div layout="row">
+                <md-input-container class="md-block" flex-sm="30" flex="20">
+
+                    <md-select ng-model="vm.etl.params.qos">
+                        <md-option value="0">
+                            0
+                        </md-option>
+
+                        <md-option value="1">
+                            1
+                        </md-option>
+
+                    </md-select>
+
+                    <label>QOS</label>
+
+                </md-input-container>
+
+                <md-input-container class="md-block" flex="80">
+                    <label>mqtt topic name</label>
+                    <input ng-model="vm.etl.topic">
+                </md-input-container>
+
+
+            </div>
+
+            <div layout="row">
+
+                <md-input-container class="md-block" flex="">
+                    <label>seriesName in influxdb</label>
+                    <input ng-model="vm.etl.params.seriesName">
+                </md-input-container>
+
+            </div>
+
+            <div layout="row">
+
+                <md-input-container class="md-block" flex="">
+                    <label>timeKeys (ex: time,date)</label>
+                    <input ng-model="vm.etl.params.timeKeys">
+                </md-input-container>
+
+            </div>
+
+            <div layout="row">
+
+                <md-input-container class="md-block" flex="">
+                    <label>denyKeys (ex: val45,val52,val63)</label>
+                    <input ng-model="vm.etl.params.denyKeys">
+                </md-input-container>
+
+            </div>
+
+            <div layout="row">
+
+                <md-input-container class="md-block" flex="">
+                    <label>tagKeys (ex: tag4,tag12,tag6)</label>
+                    <input ng-model="vm.etl.params.tagKeys">
+                </md-input-container>
+
+            </div>
+
+            <div layout="row">
+
+                <md-checkbox ng-model="vm.etl.params.allowString">
+                    Insert string key as a value
+                </md-checkbox>
+            </div>
+
+
+
+
+        </form>
+    </div>
+</md-content>

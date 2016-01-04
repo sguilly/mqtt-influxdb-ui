@@ -38,7 +38,7 @@
         $httpProvider.defaults.useXDomain = true;
 
         RestangularProvider.setRestangularFields({
-            id: "_id"
+            id: '_id'
         });
 
 

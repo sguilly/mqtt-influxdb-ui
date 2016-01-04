@@ -1,5 +1,6 @@
-<h1>Messages in the queue</h1>
+<h1>ETL</h1>
 
+<md-button ng-click="vm.addDecoder()">ADD A NEW ONE</md-button>
 
 <div class="md-toolbar-tools" ng-show="vm.selected.length">
     <span>{{vm.selected.length}} {{vm.selected.length > 1 ? 'items' : 'item'}} selected</span>
@@ -12,24 +13,18 @@
     <table md-table md-progress="vm.promise" md-row-select="true" ng-model="vm.selected">
         <thead md-head md-order="vm.query.order">
         <tr md-row>
-
-            <th md-column md-order-by="seriesName"><span>Rss</span></th>
-            <th md-column md-order-by="values"><span>Heap</span></th>
-            <th md-column md-order-by="tags"><span>Time</span></th>
-
+            <th md-column md-order-by="topic"><span>Topic</span></th>
+            <th md-column md-order-by="params"><span>Params</span></th>
         </tr>
         </thead>
         <tbody md-body>
-        <tr md-row md-select="line" md-select-id="{{line._id}}" md-auto-select
+        <tr md-row md-select="line" md-select-id="{{line._id}}" ui-sref="etl-model({objectId: line._id})"
             ng-repeat="line in vm.rawData | orderBy: vm.query.order | filter:vm.searchText | limitTo: vm.query.limit: (vm.query.page - 1) * vm.query.limit">
-            <td md-cell>{{line.seriesName}}</td>
-            <td md-cell>{{line.values}}</td>
-            <td md-cell>{{line.tags}}</td>
-
+            <td md-cell>{{line.topic}}</td>
+            <td md-cell>{{line.params}}</td>
         </tr>
         </tbody>
     </table>
 </md-table-container>
 
 <md-table-pagination mdBoundaryLinks md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.rawData.length}}" md-on-paginate="vm.onPaginate" md-page-select></md-table-pagination>
-
