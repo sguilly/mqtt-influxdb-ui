@@ -1,0 +1,7 @@
+<h1>Accounts</h1>
+
+<md-button ng-click="vm.addDecoder()">Add Decoder</md-button>
+
+<ul>
+    <li ng-click="vm.update(line)" ng-repeat="line in vm.rawData">{{line.topic}} - {{line.params}} </li>
+</ul>
