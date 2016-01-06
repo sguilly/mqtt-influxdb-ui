@@ -32,7 +32,15 @@ module.exports = function (mqttInfluxdb) {
     app.crud('data', Data);
     app.crud('etl', Etl);
 
+
+
     app.use('/', express.static(path.join(__dirname, 'build'))); // jshint ignore:line
+
+    //app.delete('/data/deleteAll', function (req, res) {
+    //
+    //    console.log('delete All Data');
+    //    res.send('');
+    //});
 
     return app;
 

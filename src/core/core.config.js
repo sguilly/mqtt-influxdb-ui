@@ -20,8 +20,8 @@
         '$mdIconProvider',
         '$mdThemingProvider',
         'exceptionHandlerProvider',
-        '$httpProvider',
-        'RestangularProvider'
+        '$httpProvider'
+
 
     ];
 
@@ -32,14 +32,16 @@
         $mdIconProvider,
         $mdThemingProvider,
         exceptionHandlerProvider,
-        $httpProvider,
-        RestangularProvider) {
+        $httpProvider
+        ) {
 
         $httpProvider.defaults.useXDomain = true;
 
-        RestangularProvider.setRestangularFields({
-            id: '_id'
-        });
+        //RestangularProvider.setRestangularFields({
+        //    id: '_id'
+        //});
+
+
 
 
 
@@ -57,7 +59,8 @@
 
         $mdIconProvider
             .iconSet('content', 'images/content-icons.svg', 24)
-            .iconSet('navigation', 'images/navigation-icons.svg', 24);
+            .iconSet('navigation', 'images/navigation-icons.svg', 24)
+            .iconSet('refresh', 'images/ic_refresh_black_24px.svg', 24);
 
         $mdThemingProvider.theme('default')
             .primaryPalette('blue-grey');

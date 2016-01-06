@@ -7,7 +7,7 @@
     'use strict';
 
     angular.module('app.etl')
-        .controller('AccountsController', ControllerFunction);
+        .controller('EtlController', ControllerFunction);
 
     // ----- ControllerFunction -----
     ControllerFunction.$inject = ['logger','Restangular','$state'];

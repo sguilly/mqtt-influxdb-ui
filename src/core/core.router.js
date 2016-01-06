@@ -28,6 +28,10 @@
     .state('etl-model', {
             url: '/etl-model/:objectId',
             template: '<tmpl-etl-model class="page"></tmpl-etl-model>'
-        });
+        })
+            .state('topics', {
+                url: '/topics',
+                template: '<tmpl-topics class="page"></tmpl-topics>'
+            });
     }
 })();

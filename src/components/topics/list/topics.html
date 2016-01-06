@@ -1,0 +1,49 @@
+<div layout-align="start center"  layout="row">
+
+    <h1>Topics</h1>
+
+    <md-button class="md-icon-button" ng-click="vm.refresh()">
+        <md-icon md-svg-icon="navigation:refresh"></md-icon>
+    </md-button>
+
+    <span class="flex"></span>
+
+    <label>Search: <input ng-model="vm.searchText"></label>
+
+</div>
+
+<div class="md-toolbar-tools" ng-show="vm.selected.length">
+    <span>{{vm.selected.length}} {{vm.selected.length > 1 ? 'items' : 'item'}} selected</span>
+    <md-button class="md-raised" ng-click="vm.removeSelected()">Delete Selection</md-button>
+
+</div>
+
+
+
+<md-table-pagination mdBoundaryLinks md-limit="vm.query.limit" md-options="vm.mdOptions" md-page="vm.query.page" md-total="{{vm.rawData.length}}" md-on-paginate="vm.onPaginate" md-page-select></md-table-pagination>
+
+<!-- exact table from live demo -->
+<md-table-container>
+    <table md-table md-progress="vm.promise" md-row-select="true" ng-model="vm.selected">
+        <thead md-head md-order="vm.query.order">
+        <tr md-row>
+            <th md-column md-order-by="id"><span>Topic</span></th>
+            <th md-column md-order-by="date"><span>Last Date</span></th>
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row md-select="line" md-select-id="{{line._id}}"
+            ng-repeat="line in vm.rawData | orderBy: vm.query.order | filter:vm.searchText | limitTo: vm.query.limit: (vm.query.page - 1) * vm.query.limit">
+            <td md-cell ng-mouseover="vm.refreshTooltip(line.id)">{{line.id}}
+
+                <md-tooltip md-direction="top" style="font-size: 20px">
+                    {{vm.tooltip}}
+                </md-tooltip>
+            </td>
+            <td md-cell>{{line.date | stringToDate}}</td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<md-table-pagination mdBoundaryLinks md-limit="vm.query.limit" md-options="vm.mdOptions" md-page="vm.query.page" md-total="{{vm.rawData.length}}" md-on-paginate="vm.onPaginate" md-page-select></md-table-pagination>

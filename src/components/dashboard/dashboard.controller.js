@@ -13,35 +13,63 @@
 
         var vm = this;
 
-        vm.toto = 'toto';
-
         vm.selected = [];
         vm.searchText = '';
 
+        vm.mdOptions = [10, 50, 100];
+
         vm.query = {
             order: 'values.rss',
-            limit: 5,
+            limit: 10,
             page: 1
         };
 
         var Data = Restangular.all('data');
+
+        vm.removeAll = function()
+        {
+            Data.customDELETE('deleteAll',{}).then(function()
+            {
+                vm.loadData();
+            });
+        };
+
+        vm.removeSelected = function()
+        {
+            console.log('Selected=',vm.selected);
+
+            var promises = [];
+
+            for (var index = 0; index < vm.selected.length; index++) {
+                promises.push(vm.selected[index].remove());
+
+            }
+
+            Promise.all(promises).then(function()
+            {
+                vm.loadData();
+            })
+        };
 
         vm.remove = function(line)
         {
             line.remove();
         };
 
-        vm.promise = Data.getList({query: {toto: 'tt'}});
-
-        vm.promise.then(function(values)
+        vm.loadData = function()
         {
-            console.log('values=',values.length);
+            vm.promise = Data.getList();
 
-            console.log(JSON.stringify(values[0],null,3));
+            vm.promise.then(function(values)
+            {
+                //console.log('values=',values.length);
 
-            vm.rawData = values;
+                //console.log(JSON.stringify(values[0],null,3));
 
-        });
+                vm.rawData = values;
+
+            });
+        };
 
         vm.onPaginate = function(page, limit) {
             // $scope.$broadcast('md.table.deselect');
@@ -55,12 +83,8 @@
         };
 
 
+        vm.loadData();
 
-        activate();
-
-        function activate() {
-            logger.log('Activated Dashboard View');
-        }
     }
 
 })();

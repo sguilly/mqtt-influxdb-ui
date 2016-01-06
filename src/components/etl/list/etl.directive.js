@@ -17,7 +17,7 @@
             templateUrl: 'components/etl/list/etl.html',
             scope: {
             },
-            controller: 'AccountsController',
+            controller: 'EtlController',
             controllerAs: 'vm'
         };
 

@@ -1,8 +1,15 @@
-<h1>Messages in the queue</h1>
+<div layout="row">
+    <h1>Messages in the queue</h1>
+    <md-button class="md-raised" ng-click="vm.removeAll()">Delete All</md-button>
+    </div>
+
+
 
 
 <div class="md-toolbar-tools" ng-show="vm.selected.length">
     <span>{{vm.selected.length}} {{vm.selected.length > 1 ? 'items' : 'item'}} selected</span>
+    <md-button class="md-raised" ng-click="vm.removeSelected()">Delete Selection</md-button>
+
 </div>
 
 <label>Search: <input ng-model="vm.searchText"></label>
@@ -31,5 +38,5 @@
     </table>
 </md-table-container>
 
-<md-table-pagination mdBoundaryLinks md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.rawData.length}}" md-on-paginate="vm.onPaginate" md-page-select></md-table-pagination>
+<md-table-pagination mdBoundaryLinks md-limit="vm.query.limit" md-options="vm.mdOptions" md-page="vm.query.page" md-total="{{vm.rawData.length}}" md-on-paginate="vm.onPaginate" md-page-select></md-table-pagination>
 
