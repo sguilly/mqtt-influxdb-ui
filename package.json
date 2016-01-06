@@ -16,6 +16,7 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "async": "^1.5.1",
     "body-parser": "^1.13.1",
     "compression": "^1.6.0",
     "connect-modrewrite": "^0.8.1",
