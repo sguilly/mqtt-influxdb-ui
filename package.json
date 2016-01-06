@@ -10,10 +10,7 @@
     "url": "https://github.com/sguilly/mqtt-influxdb-ui.git"
   },
   "scripts": {
-    "init": "npm install",
-    "install": "bower install",
-    "start": "node mock-server/app.js",
-    "test": "gulp test"
+    "init": "npm install"
   },
   "dependencies": {
     "async": "^1.5.1",
