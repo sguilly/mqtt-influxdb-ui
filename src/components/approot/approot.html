@@ -1,9 +1,11 @@
-<tmpl-appbar></tmpl-appbar>
+<section layout="row" layout-sm="column" layout-align="start center">
+    <md-button class="groupX left" ui-sref="etl">ETL Conf</md-button>
+    <md-button class="groupX middle" ui-sref="dashboard">Messages</md-button>
+    <md-button class="groupX right" ui-sref="topics">Last Topics info </md-button>
+</section>
 
 <div flex layout="row">
-    <tmpl-sidenav layout="column"></tmpl-sidenav>
-
-    <md-content flex layout-padding id="content">
+       <md-content flex layout-padding id="content">
         <div ui-view></div>
     </md-content>
 </div>

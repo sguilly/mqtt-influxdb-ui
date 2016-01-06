@@ -6,7 +6,14 @@
         <md-icon md-svg-icon="navigation:refresh"></md-icon>
     </md-button>
 
-    <span class="flex"></span>
+    <span flex="5"></span>
+
+    <md-input-container class="md-block" flex="">
+        <label>url mosca api</label>
+        <input ng-model="vm.moscaApiUrl">
+    </md-input-container>
+
+    <span flex="5"></span>
 
     <label>Search: <input ng-model="vm.searchText"></label>
 

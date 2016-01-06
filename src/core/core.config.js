@@ -33,16 +33,10 @@
         $mdThemingProvider,
         exceptionHandlerProvider,
         $httpProvider
+
         ) {
 
         $httpProvider.defaults.useXDomain = true;
-
-        //RestangularProvider.setRestangularFields({
-        //    id: '_id'
-        //});
-
-
-
 
 
         // During development, you may want to set debugInfoEnabled to true. This is required for tools like

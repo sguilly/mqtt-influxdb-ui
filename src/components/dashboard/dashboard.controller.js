@@ -48,7 +48,7 @@
             Promise.all(promises).then(function()
             {
                 vm.loadData();
-            })
+            });
         };
 
         vm.remove = function(line)

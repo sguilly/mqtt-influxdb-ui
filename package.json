@@ -22,7 +22,7 @@
     "cors": "^2.7.1",
     "express": "^4.13.0",
     "express-crud": "^4.0.1",
-    "morgan": "^1.6.0"
+    "redis": "git+https://github.com/sguilly/node_redis.git"
   },
   "devDependencies": {
     "browser-sync": "^2.9.11",
