@@ -1,5 +1,21 @@
 bower.json
 
+.editorconfig
+
+.jshintrc
+
+.jscsrc
+
+.npmignore
+
+.travis.yml
+
+gulp.config.js
+
+gulpfile.js
+
+karma.conf.js
+
 bower_components
 
 gulp-tasks
