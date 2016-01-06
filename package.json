@@ -1,13 +1,13 @@
 {
-  "name": "angular-material-template",
-  "description": "A template to kick-start AngularJS projects using Material design",
+  "name": "mqtt-influxdb-ui",
+  "description": "express middleware - add a mqtt-influxdb-ui route to your web app",
   "version": "0.1.0",
-  "author": "Naresh Bhatia",
+  "author": "Stéphane GUILLY",
   "license": "MIT",
-  "homepage": "https://github.com/archfirst/angular-material-template",
+  "homepage": "https://github.com/sguilly/mqtt-influxdb-ui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/archfirst/angular-material-template.git"
+    "url": "https://github.com/sguilly/mqtt-influxdb-ui.git"
   },
   "scripts": {
     "init": "npm install",
